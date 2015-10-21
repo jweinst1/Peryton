@@ -21,4 +21,15 @@ In Swift, you can declare variables and constants:
 
 Where changing the let constant causes an error. Python does not have constants. However, one can theoretically infer from the structure of a function or program if a variable has the need for being protected. Peryton will be developed to do this through a process called Flow_Analysis, that determines the connections between functions, classes, objects and other parts of a program.
 
+######Equivalency
+
+In Swift, there are times when using a specific element of the language is more effecient than it's equivalent element in Python. As a basic example:
+
+`class frogs(object):`
+
+    fly_count = 7
+    length = "four"
+
+* Since this class only contains a set of variables, it would be better suited as a struct, not a class. Peryton will be developed to tell that difference in the process of writing Swift code.
+
 * See the peryton package for the transpiler code.
