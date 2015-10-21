@@ -21,4 +21,16 @@ class slicer(object):
                 line.remove('\t')
                 line = ''.join(line)
         return lines
+    def line_by_tabs(name):
+        #arranges lines in py file by the number of tabs in a dictionary.
+        lines = slicer.pylines(name)
+        tab_counts = [elem.count('\t') for elem in lines]
+        tab_counts = set(tab_counts)
+        return {num:[line for line in lines if line.count('\t') == num] for num in tab_counts}
+    def line_phrase(name, phrase):
+        python = open(name, 'r')
+        lines = python.read().split('\n')
+        pattern = r"^.*%s.*$" %(phrase)
+        temp = re.compile(pattern)
+        return [line for line in lines if temp.match(line)]
 
