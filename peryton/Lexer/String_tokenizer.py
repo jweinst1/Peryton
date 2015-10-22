@@ -28,9 +28,22 @@ class slicer(object):
         tab_counts = set(tab_counts)
         return {num:[line for line in lines if line.count('\t') == num] for num in tab_counts}
     def line_phrase(name, phrase):
+        #get lines if they contain a specific string.
         python = open(name, 'r')
         lines = python.read().split('\n')
         pattern = r"^.*%s.*$" %(phrase)
         temp = re.compile(pattern)
         return [line for line in lines if temp.match(line)]
+
+class pytoken(object):
+    #class that creates string tokens based on matchable python syntax.
+    def find_assignments(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.*[a-z]+.* = .+$")
+        return [line for line in lines if temp.match(line)]
+    def find_eq(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.+ == .+$")
+        return [line for line in lines if temp.match(line)]
+
 

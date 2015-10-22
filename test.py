@@ -1,7 +1,8 @@
 #TEST FILE FOR TRANSPILER
 #DO NOT IMPORT
 #deep dict functions
-
+f = 2
+y = 5
 def deep_dict_linear(lst):
 	temp = {}
 	searcher = temp
@@ -49,13 +50,18 @@ def inverse(func1, func2, domain):
 
 #polynomials
 
-def polynomial_sing(expression, doman):
+def polynomial_sing(expression, domain):
+	targ = 9
+	if domain == 2:
+		pass
 	return [x for x in domain if eval(expression)]
 def polynomial_double(expression, domain):
 	return [(x, y) for x in domain for y in domain if eval(expression)]
 
 class bing(object):
 	ting = 5
+	t = (7 == 8)
+
 
 	def __init__(self, power):
 		assert power < 5
