@@ -11,6 +11,10 @@ class slicer(object):
     def pylines(name):
         python = open(name, 'r')
         return python.read().split('\n')
+    def pynumlines(name):
+        python = open(name, 'r')
+        lines = python.read().split('\n')
+        return list(enumerate(lines))
 
     def notab_lines(name):
         python = open(name, 'r')
@@ -35,8 +39,8 @@ class slicer(object):
         temp = re.compile(pattern)
         return [line for line in lines if temp.match(line)]
 
-class pytoken(object):
-    #class that creates string tokens based on matchable python syntax.
+class oper_tokens(object):
+    #class that creates string tokens for python operators.
     def find_comments(name):
         lines = slicer.pylines(name)
         temp = re.compile(r"^.*#.*$")
@@ -48,6 +52,26 @@ class pytoken(object):
     def find_eq(name):
         lines = slicer.pylines(name)
         temp = re.compile(r"^.+==.+$")
+        return [line for line in lines if temp.match(line)]
+    def find_noteq(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.+!=.+$")
+        return [line for line in lines if temp.match(line)]
+    def find_greater(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.+>.+$")
+        return [line for line in lines if temp.match(line)]
+    def find_lesser(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.+<.+$")
+        return [line for line in lines if temp.match(line)]
+    def find_ge(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.+>=.+$")
+        return [line for line in lines if temp.match(line)]
+    def find_le(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.+<=.+$")
         return [line for line in lines if temp.match(line)]
 
 
