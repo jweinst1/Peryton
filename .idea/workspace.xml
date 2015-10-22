@@ -35,20 +35,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="String_tokenizer.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="String_tokenizer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peryton/Lexer/String_tokenizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.4117647">
+              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Unittests.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Unittests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peryton/Lexer/Unittests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.042016808">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
               <folding />
             </state>
@@ -130,9 +130,9 @@
         <option value="$PROJECT_DIR$/peryton/__init__.py" />
         <option value="$PROJECT_DIR$/peryton/Lexer/test.py" />
         <option value="$PROJECT_DIR$/peryton/Lexer/__init__.py" />
-        <option value="$PROJECT_DIR$/peryton/Lexer/String_tokenizer.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/peryton/Lexer/Unittests.py" />
+        <option value="$PROJECT_DIR$/peryton/Lexer/String_tokenizer.py" />
       </list>
     </option>
   </component>
@@ -600,18 +600,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peryton/Lexer/String_tokenizer.py">
+    <entry file="file://$PROJECT_DIR$/peryton/Lexer/Unittests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peryton/Lexer/Unittests.py">
+    <entry file="file://$PROJECT_DIR$/peryton/Lexer/String_tokenizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042016808">
-          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.4117647">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
           <folding />
         </state>
       </provider>

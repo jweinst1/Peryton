@@ -37,13 +37,17 @@ class slicer(object):
 
 class pytoken(object):
     #class that creates string tokens based on matchable python syntax.
+    def find_comments(name):
+        lines = slicer.pylines(name)
+        temp = re.compile(r"^.*#.*$")
+        return [line for line in lines if temp.match(line)]
     def find_assignments(name):
         lines = slicer.pylines(name)
-        temp = re.compile(r"^.*[a-z]+.* = .+$")
+        temp = re.compile(r"^.*[a-z]+.*=.+$")
         return [line for line in lines if temp.match(line)]
     def find_eq(name):
         lines = slicer.pylines(name)
-        temp = re.compile(r"^.+ == .+$")
+        temp = re.compile(r"^.+==.+$")
         return [line for line in lines if temp.match(line)]
 
 
