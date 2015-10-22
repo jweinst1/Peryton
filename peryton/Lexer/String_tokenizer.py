@@ -42,36 +42,126 @@ class slicer(object):
 class oper_tokens(object):
     #class that creates string tokens for python operators.
     def find_comments(name):
-        lines = slicer.pylines(name)
+        lines = slicer.pynumlines(name)
         temp = re.compile(r"^.*#.*$")
-        return [line for line in lines if temp.match(line)]
+        return [line for line in lines if temp.match(line[1])]
     def find_assignments(name):
-        lines = slicer.pylines(name)
-        temp = re.compile(r"^.*[a-z]+.*=.+$")
-        return [line for line in lines if temp.match(line)]
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*[a-z]+[^<>!]*=[^<>!]+$")
+        return [line for line in lines if temp.match(line[1])]
     def find_eq(name):
-        lines = slicer.pylines(name)
+        lines = slicer.pynumlines(name)
         temp = re.compile(r"^.+==.+$")
-        return [line for line in lines if temp.match(line)]
+        return [line for line in lines if temp.match(line[1])]
     def find_noteq(name):
-        lines = slicer.pylines(name)
+        lines = slicer.pynumlines(name)
         temp = re.compile(r"^.+!=.+$")
-        return [line for line in lines if temp.match(line)]
+        return [line for line in lines if temp.match(line[1])]
     def find_greater(name):
-        lines = slicer.pylines(name)
+        lines = slicer.pynumlines(name)
         temp = re.compile(r"^.+>.+$")
-        return [line for line in lines if temp.match(line)]
+        return [line for line in lines if temp.match(line[1])]
     def find_lesser(name):
-        lines = slicer.pylines(name)
+        lines = slicer.pynumlines(name)
         temp = re.compile(r"^.+<.+$")
-        return [line for line in lines if temp.match(line)]
+        return [line for line in lines if temp.match(line[1])]
     def find_ge(name):
-        lines = slicer.pylines(name)
+        lines = slicer.pynumlines(name)
         temp = re.compile(r"^.+>=.+$")
-        return [line for line in lines if temp.match(line)]
+        return [line for line in lines if temp.match(line[1])]
     def find_le(name):
-        lines = slicer.pylines(name)
+        lines = slicer.pynumlines(name)
         temp = re.compile(r"^.+<=.+$")
-        return [line for line in lines if temp.match(line)]
+        return [line for line in lines if temp.match(line[1])]
+    def find_alt_noteq(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+<>.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_add(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+[+].+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_sub(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+[-].+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_mul(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+[*].+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_div(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+[/].+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_floordiv(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+[/][/].+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_modulus(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+[%].+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_expo(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+[*][*].+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_addAND(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.[+]=.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_subAND(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.-=.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_mulAND(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.[*]=.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_divAND(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.[/]=.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_modulusAND(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.[%]=.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_floordivAND(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.[/][/]=.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_expoAND(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.[*][*]=.+$")
+        return [line for line in lines if temp.match(line[1])]
 
+class logmem_oper_tokens(object):
+
+    def find_not(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+ not .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_or(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+ or .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_and(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+ and .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_is(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+ is .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_in(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+ in .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_notin(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+ not in .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_is_not(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+ is not .+$")
+        return [line for line in lines if temp.match(line[1])]
 
