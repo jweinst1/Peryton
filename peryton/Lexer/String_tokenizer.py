@@ -165,3 +165,30 @@ class logmem_oper_tokens(object):
         temp = re.compile(r"^.+ is not .+$")
         return [line for line in lines if temp.match(line[1])]
 
+class bitwise_oper_tokens(object):
+
+    def find_and(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+&.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_or(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+|.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_xor(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+^.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_comp(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+~.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_lshift(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+<<.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_rshift(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.+>>.+$")
+        return [line for line in lines if temp.match(line[1])]
+
