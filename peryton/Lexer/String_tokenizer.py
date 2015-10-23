@@ -209,5 +209,29 @@ class statement_tokens(object):
         return [line for line in lines if temp.match(line[1])]
     def find_if(name):
         lines = slicer.pynumlines(name)
-        temp = re.compile(r"^.* for [a-zA-Z0-9]+ in .+:$")
+        temp = re.compile(r"^.*if .+:.*$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_elif(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*elif .+:.*$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_else(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*else:.*$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_return(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*return .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_pass(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*pass.+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_try(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*try:.*$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_exception(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*except.+:$")
         return [line for line in lines if temp.match(line[1])]
