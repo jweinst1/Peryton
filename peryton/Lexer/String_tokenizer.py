@@ -192,3 +192,22 @@ class bitwise_oper_tokens(object):
         temp = re.compile(r"^.+>>.+$")
         return [line for line in lines if temp.match(line[1])]
 
+class statement_tokens(object):
+
+    def find_userdef(name):
+        #finds all functions using def statement
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.* def .+$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_for_in(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*for [a-zA-Z0-9]+ in .+:$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_while(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.*while .+:.*$")
+        return [line for line in lines if temp.match(line[1])]
+    def find_if(name):
+        lines = slicer.pynumlines(name)
+        temp = re.compile(r"^.* for [a-zA-Z0-9]+ in .+:$")
+        return [line for line in lines if temp.match(line[1])]
