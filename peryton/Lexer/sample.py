@@ -68,3 +68,6 @@ class bing(object):
 		self.power = power
 		self.strength = power * 2
 
+	def foo(self):
+		return 5
+
