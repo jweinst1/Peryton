@@ -3,6 +3,7 @@
 #deep dict functions
 f = 2
 y = 5
+ten = 7*7*7
 def deep_dict_linear(lst):
 	temp = {}
 	searcher = temp
