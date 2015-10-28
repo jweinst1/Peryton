@@ -22,7 +22,7 @@ class intspy(int):
         self.operations.append((sys._getframe().f_code.co_name))
         return str(self.val)
     def __str__(self):
-        self.operations.append((sys._getframe().f_back.f_code.co_name))
+        self.operations.append((sys._getframe().f_code.co_name))
         return str(self.val)
     def __add__(self, other):
         self.operations.append((sys._getframe().f_code.co_name, other))
