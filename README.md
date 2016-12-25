@@ -23,7 +23,7 @@ Where changing the let constant causes an error. Python does not have constants.
 
 ######Equivalency
 
-In Swift, there are times when using a specific element of the language is more effecient than it's equivalent element in Python. As a basic example:
+In Swift, there are times when using a specific element of the language is more efficient than it's equivalent element in Python. As a basic example:
 
 `class frogs(object):`
 
